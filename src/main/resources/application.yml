@@ -18,8 +18,8 @@ spring:
     validate-on-migrate: true
     out-of-order: false
     clean-disabled: true
-    user: ${spring.datasource.username}
-    password: ${spring.datasource.password}
+    user: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
   springdoc:
     writer-with-order-by-keys: true
     swagger-ui:
