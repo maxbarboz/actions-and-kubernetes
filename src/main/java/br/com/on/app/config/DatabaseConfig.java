@@ -1,4 +1,4 @@
-package br.com.on.fiap.app.config;
+package br.com.on.app.config;
 
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Value;

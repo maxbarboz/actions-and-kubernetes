@@ -1,4 +1,4 @@
-package br.com.on.fiap.app.entity.dto;
+package br.com.on.app.entity.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

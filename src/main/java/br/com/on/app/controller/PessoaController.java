@@ -1,8 +1,8 @@
-package br.com.on.fiap.app.controller;
+package br.com.on.app.controller;
 
-import br.com.on.fiap.app.controller.swagger.PessoaControllerSwagger;
-import br.com.on.fiap.app.entity.dto.PessoaInsertDTO;
-import br.com.on.fiap.app.service.PessoaService;
+import br.com.on.app.controller.swagger.PessoaControllerSwagger;
+import br.com.on.app.entity.dto.PessoaInsertDTO;
+import br.com.on.app.service.PessoaService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

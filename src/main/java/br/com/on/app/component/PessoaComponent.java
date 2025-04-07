@@ -1,6 +1,6 @@
-package br.com.on.fiap.app.component;
+package br.com.on.app.component;
 
-import br.com.on.fiap.app.repository.PessoaRepository;
+import br.com.on.app.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
