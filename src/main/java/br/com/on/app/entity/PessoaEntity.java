@@ -8,7 +8,6 @@ import lombok.*;
 @Entity
 @Table(
         name = "pessoa",
-        schema = "public",
         uniqueConstraints = {@UniqueConstraint(columnNames = "email"), @UniqueConstraint(columnNames = "cpf")})
 @Getter
 @Setter
