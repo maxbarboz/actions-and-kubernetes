@@ -19,11 +19,8 @@
 		<java.version>21</java.version>
 		<spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
 		<springdoc-swagger.version>1.6.9</springdoc-swagger.version>
-		<flyway.version>8.5.13</flyway.version>
-		<flyway-plugin.version>8.5.13</flyway-plugin.version>
 		<lombok-version>1.18.36</lombok-version>
-		<jakarta-persistence.version>3.2.0</jakarta-persistence.version>
-		<mysql-connector-java>5.1.49</mysql-connector-java>
+		<mysql-connector-version>8.0.33</mysql-connector-version>
 	</properties>
 
 	<dependencies>
@@ -45,12 +42,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-			<version>${flyway.version}</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-jdbc</artifactId>
 		</dependency>
@@ -63,12 +54,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>jakarta.persistence</groupId>
-			<artifactId>jakarta.persistence-api</artifactId>
-			<version>${jakarta-persistence.version}</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
@@ -76,7 +61,17 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.30</version>
+			<version>${mysql-connector-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -112,18 +107,6 @@
 						<trimTrailingWhitespace/>
 						<lineEndings>UNIX</lineEndings>
 					</java>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.flywaydb</groupId>
-				<artifactId>flyway-maven-plugin</artifactId>
-				<version>${flyway-plugin.version}</version>
-				<configuration>
-					<url>${DB_URL}</url>
-					<user>${DB_USER}</user>
-					<password>${DB_PASSWORD}</password>
-					<locations>classpath:db/migration</locations>
 				</configuration>
 			</plugin>
 		</plugins>
