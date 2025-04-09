@@ -48,5 +48,4 @@ public class PessoaController implements PessoaControllerSwagger {
     public ResponseEntity delete() {
         return null;
     }
-
 }
