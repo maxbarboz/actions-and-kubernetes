@@ -6,9 +6,7 @@ import java.time.LocalDateTime;
 import lombok.*;
 
 @Entity
-@Table(
-        name = "pessoa",
-        uniqueConstraints = {@UniqueConstraint(columnNames = "email"), @UniqueConstraint(columnNames = "cpf")})
+@Table(name = "tb_pes_pessoa")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,30 +17,35 @@ public class PessoaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "pes_id", nullable = false)
     private Long id;
 
-    @Column(name = "nome", nullable = false, length = 255)
+    @Column(name = "pes_nome", nullable = false)
     private String nome;
 
-    @Column(name = "email", nullable = false, length = 255, unique = true)
+    @Column(name = "pes_email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "data_nascimento")
+    @Column(name = "pes_dt_nascimento")
     private LocalDate dataNascimento;
 
-    @Column(name = "cpf", length = 14, unique = true)
+    @Column(name = "pes_cpf", length = 14, unique = true)
     private String cpf;
 
-    @Column(name = "telefone", length = 20)
+    @Column(name = "pes_telefone", length = 20)
     private String telefone;
 
-    @Column(name = "endereco", columnDefinition = "TEXT")
+    @Column(name = "pes_endereco", columnDefinition = "TEXT")
     private String endereco;
 
-    @Column(name = "criado_em", nullable = false, updatable = false)
+    @Column(name = "pes_dt_criacao", nullable = false, updatable = false)
     private LocalDateTime criadoEm;
 
-    @Column(name = "atualizado_em", nullable = false)
+    @Column(name = "pes_dt_atualizacao")
     private LocalDateTime atualizadoEm;
+
+    @PrePersist
+    public void prePersist() {
+        this.criadoEm = LocalDateTime.now();
+    }
 }

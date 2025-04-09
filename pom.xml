@@ -21,7 +21,7 @@
 		<springdoc-swagger.version>1.6.9</springdoc-swagger.version>
 		<lombok-version>1.18.36</lombok-version>
 		<mysql-connector-version>8.0.33</mysql-connector-version>
-		<flyway-version>10.14.0</flyway-version>
+		<flyway-version>11.6.0</flyway-version>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.projectKey>maxbarboz_actions-and-kubernetes</sonar.projectKey>
 		<sonar.organization>maxbarboz</sonar.organization>
@@ -82,7 +82,7 @@
 
 		<dependency>
 			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
+			<artifactId>flyway-mysql</artifactId>
 			<version>${flyway-version}</version>
 		</dependency>
 
@@ -96,6 +96,29 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.5.5.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-processor</artifactId>
+			<version>1.5.5.Final</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
@@ -138,18 +161,6 @@
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
 				<version>3.10.0.2594</version>
-			</plugin>
-
-			<plugin>
-				<groupId>org.flywaydb</groupId>
-				<artifactId>flyway-maven-plugin</artifactId>
-				<version>9.22.3</version>
-				<configuration>
-					<url>jdbc:mysql://localhost:3306/actionsandkubernetes</url>
-					<user>${MYSQL_USER}</user>
-					<password>${MYSQL_PASSWORD}</password>
-					<driver>com.mysql.cj.jdbc.Driver</driver>
-				</configuration>
 			</plugin>
 
 			<plugin>

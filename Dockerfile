@@ -8,7 +8,7 @@ RUN mvn clean install -DskipTests
 FROM openjdk:21-slim
 
 WORKDIR /opt/app
-COPY --from=builder /app/actions-and-kubernetes/target/*.jar /actions-and-kubernetes.jar
+COPY --from=builder /app/target/*.jar /actions-and-kubernetes.jar
 
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/actions-and-kubernetes.jar"]

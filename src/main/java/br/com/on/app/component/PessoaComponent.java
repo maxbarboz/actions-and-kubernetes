@@ -1,5 +1,6 @@
 package br.com.on.app.component;
 
+import br.com.on.app.entity.PessoaEntity;
 import br.com.on.app.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,5 +15,7 @@ public class PessoaComponent {
         this.repository = pessoaRepository;
     }
 
-    public void inserirPessoa() {}
+    public PessoaEntity save(PessoaEntity pessoaEntity) {
+        return repository.save(pessoaEntity);
+    }
 }
