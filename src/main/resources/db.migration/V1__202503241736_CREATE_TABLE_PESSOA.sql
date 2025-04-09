@@ -1,6 +1,3 @@
----------------------------------------------------------------
------- Criação de tabela pessoa
----------------------------------------------------------------
 CREATE TABLE tb_pes_pessoa (
     pes_id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT 'Identificador único da pessoa',
     pes_nome VARCHAR(255) NOT NULL COMMENT 'Nome completo da pessoa',

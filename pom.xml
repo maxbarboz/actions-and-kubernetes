@@ -82,7 +82,7 @@
 
 		<dependency>
 			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
+			<artifactId>flyway-mysql</artifactId>
 			<version>${flyway-version}</version>
 		</dependency>
 
@@ -155,18 +155,6 @@
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
 				<version>3.10.0.2594</version>
-			</plugin>
-
-			<plugin>
-				<groupId>org.flywaydb</groupId>
-				<artifactId>flyway-maven-plugin</artifactId>
-				<version>9.22.3</version>
-				<configuration>
-					<url>jdbc:mysql://localhost:3306/actionsandkubernetes</url>
-					<user>${MYSQL_USER}</user>
-					<password>${MYSQL_PASSWORD}</password>
-					<driver>com.mysql.cj.jdbc.Driver</driver>
-				</configuration>
 			</plugin>
 
 			<plugin>
