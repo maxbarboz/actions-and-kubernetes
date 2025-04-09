@@ -25,8 +25,7 @@ public class PessoaInsertDTO {
     @Size(max = 255, message = "O e-mail não pode ter mais de 255 caracteres.")
     private String email;
 
-    @NotNull(message = "A data de nascimento não pode ser nula.")
-    private LocalDate dataNascimento;
+    @NotNull(message = "A data de nascimento não pode ser nula.") private LocalDate dataNascimento;
 
     @Size(max = 14, message = "O CPF deve ter no máximo 14 caracteres.")
     private String cpf;

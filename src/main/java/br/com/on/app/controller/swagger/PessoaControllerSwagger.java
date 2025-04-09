@@ -27,5 +27,4 @@ public interface PessoaControllerSwagger {
                 @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
             })
     ResponseEntity<PessoaInsertDTO> create(@RequestBody PessoaInsertDTO pessoaInsertDTO);
-
 }
