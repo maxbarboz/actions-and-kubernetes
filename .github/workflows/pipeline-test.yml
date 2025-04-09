@@ -14,8 +14,8 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-      - name: Maven verify
-        run: mvn verify
+      - name: Maven test
+        run: mvn test
       - name: Generate JaCoCo Badge
         id: jacoco
         uses: cicirello/jacoco-badge-generator@v2

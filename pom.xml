@@ -164,17 +164,10 @@
 					</execution>
 					<execution>
 						<id>report</id>
-						<phase>verify</phase>
+						<phase>test</phase>
 						<goals>
 							<goal>report</goal>
 						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/site/jacoco</outputDirectory>
-							<formats>
-								<format>CSV</format>
-								<format>HTML</format>
-							</formats>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
