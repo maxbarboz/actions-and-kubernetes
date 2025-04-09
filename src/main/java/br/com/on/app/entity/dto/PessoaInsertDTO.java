@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class PessoaInsertDTO {
 
     @NotBlank(message = "O nome não pode ser vazio.")
@@ -23,7 +25,8 @@ public class PessoaInsertDTO {
     @Size(max = 255, message = "O e-mail não pode ter mais de 255 caracteres.")
     private String email;
 
-    @NotNull(message = "A data de nascimento não pode ser nula.") private LocalDate dataNascimento;
+    @NotNull(message = "A data de nascimento não pode ser nula.")
+    private LocalDate dataNascimento;
 
     @Size(max = 14, message = "O CPF deve ter no máximo 14 caracteres.")
     private String cpf;

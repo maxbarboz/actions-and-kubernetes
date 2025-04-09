@@ -41,6 +41,11 @@ public class PessoaEntity {
     @Column(name = "pes_dt_criacao", nullable = false, updatable = false)
     private LocalDateTime criadoEm;
 
-    @Column(name = "pes_dt_atualizacao", nullable = false)
+    @Column(name = "pes_dt_atualizacao")
     private LocalDateTime atualizadoEm;
+
+    @PrePersist
+    public void prePersist() {
+        this.criadoEm = LocalDateTime.now();
+    }
 }
