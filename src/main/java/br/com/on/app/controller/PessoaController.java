@@ -19,11 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 @Log4j2
 public class PessoaController implements PessoaControllerSwagger {
 
-    @Autowired
     private PessoaService service;
 
+    @Autowired
+    public PessoaController(PessoaService service) {
+        this.service = service;
+    }
+
     @PostMapping
-    @Override
     public ResponseEntity create(@RequestBody PessoaInsertDTO pessoaInsertDTO) {
         log.info("Iniciando processo de inclusão de um registro de Pessoa");
         PessoaInsertDTO pessoaPersistida = service.incluirPessoa(pessoaInsertDTO);
@@ -32,20 +35,18 @@ public class PessoaController implements PessoaControllerSwagger {
     }
 
     @GetMapping
-    @Override
     public ResponseEntity list() {
         return null;
     }
 
     @PutMapping
-    @Override
     public ResponseEntity update() {
         return null;
     }
 
     @DeleteMapping
-    @Override
     public ResponseEntity delete() {
         return null;
     }
+
 }
