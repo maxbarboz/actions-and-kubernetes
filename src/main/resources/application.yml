@@ -3,7 +3,7 @@ application:
   title: Projeto para desenvolvimento de habilidades voltadas ao GitHub Actions e Kubernetes
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/actionsandkubernetes
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/actionsandkubernetes
     username: ${MYSQL_USER}
     password: ${MYSQL_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
